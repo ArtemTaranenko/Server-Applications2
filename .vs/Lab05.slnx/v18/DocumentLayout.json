@@ -3,13 +3,42 @@
   "WorkspaceRootPath": "C:\\Users\\Student\\Documents\\Taranenko\\Lab05\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9B0FA93B-3CF9-44C4-962B-670EB60AB57F}|..\\Model\\Model.csproj|c:\\users\\student\\documents\\taranenko\\model\\datamodels\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Student\\Documents\\Taranenko\\DAL\\Migrations\\20260413113820_Initial Migration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9905E86D-3DE2-410B-8BD1-C0FAB4E9FF81}|..\\Services\\Services.csproj|c:\\users\\student\\documents\\taranenko\\services\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DEB3DC7C-5059-F4AD-2883-65AE6414B1AF}|..\\DAL\\DAL.csproj|c:\\users\\student\\documents\\taranenko\\dal\\ef\\mydbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7FF4CB6C-2FAA-41C0-B228-3801BD3EAC49}|..\\DAL\\DAL.csproj|c:\\users\\student\\documents\\taranenko\\dal\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{19C7C86B-88DA-9A98-B57D-7FA23AB4DA69}|..\\Model\\Model.csproj|c:\\users\\student\\documents\\taranenko\\model\\datamodels\\roomequipment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19C7C86B-88DA-9A98-B57D-7FA23AB4DA69}|..\\Model\\Model.csproj|c:\\users\\student\\documents\\taranenko\\model\\datamodels\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19C7C86B-88DA-9A98-B57D-7FA23AB4DA69}|..\\Model\\Model.csproj|c:\\users\\student\\documents\\taranenko\\model\\datamodels\\reservationstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19C7C86B-88DA-9A98-B57D-7FA23AB4DA69}|..\\Model\\Model.csproj|c:\\users\\student\\documents\\taranenko\\model\\datamodels\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19C7C86B-88DA-9A98-B57D-7FA23AB4DA69}|..\\Model\\Model.csproj|c:\\users\\student\\documents\\taranenko\\model\\datamodels\\eventtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19C7C86B-88DA-9A98-B57D-7FA23AB4DA69}|..\\Model\\Model.csproj|c:\\users\\student\\documents\\taranenko\\model\\datamodels\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19C7C86B-88DA-9A98-B57D-7FA23AB4DA69}|..\\Model\\Model.csproj|c:\\users\\student\\documents\\taranenko\\model\\datamodels\\equipment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19C7C86B-88DA-9A98-B57D-7FA23AB4DA69}|..\\Model\\Model.csproj|c:\\users\\student\\documents\\taranenko\\model\\datamodels\\building.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF74822C-94CA-6E2D-E208-AAF412850416}|Web.csproj|c:\\users\\student\\documents\\taranenko\\lab05\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{FF74822C-94CA-6E2D-E208-AAF412850416}|Web.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF74822C-94CA-6E2D-E208-AAF412850416}|Web.csproj|c:\\users\\student\\documents\\taranenko\\lab05\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF74822C-94CA-6E2D-E208-AAF412850416}|Web.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -24,40 +53,157 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "20260413113820_Initial Migration.cs",
+              "DocumentMoniker": "C:\\Users\\Student\\Documents\\Taranenko\\DAL\\Migrations\\20260413113820_Initial Migration.cs",
+              "RelativeDocumentMoniker": "..\\DAL\\Migrations\\20260413113820_Initial Migration.cs",
+              "ToolTip": "C:\\Users\\Student\\Documents\\Taranenko\\DAL\\Migrations\\20260413113820_Initial Migration.cs",
+              "RelativeToolTip": "..\\DAL\\Migrations\\20260413113820_Initial Migration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-13T11:38:20.912Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Student\\Documents\\Taranenko\\Lab05\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Student\\Documents\\Taranenko\\Lab05\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-13T11:28:17.34Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MyDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Student\\Documents\\Taranenko\\DAL\\EF\\MyDbContext.cs",
+              "RelativeDocumentMoniker": "..\\DAL\\EF\\MyDbContext.cs",
+              "ToolTip": "C:\\Users\\Student\\Documents\\Taranenko\\DAL\\EF\\MyDbContext.cs",
+              "RelativeToolTip": "..\\DAL\\EF\\MyDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-13T11:15:41.458Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Equipment.cs",
+              "DocumentMoniker": "C:\\Users\\Student\\Documents\\Taranenko\\Model\\DataModels\\Equipment.cs",
+              "RelativeDocumentMoniker": "..\\Model\\DataModels\\Equipment.cs",
+              "ToolTip": "C:\\Users\\Student\\Documents\\Taranenko\\Model\\DataModels\\Equipment.cs",
+              "RelativeToolTip": "..\\Model\\DataModels\\Equipment.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAUwAwAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-13T11:12:21.721Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RoomEquipment.cs",
+              "DocumentMoniker": "C:\\Users\\Student\\Documents\\Taranenko\\Model\\DataModels\\RoomEquipment.cs",
+              "RelativeDocumentMoniker": "..\\Model\\DataModels\\RoomEquipment.cs",
+              "ToolTip": "C:\\Users\\Student\\Documents\\Taranenko\\Model\\DataModels\\RoomEquipment.cs",
+              "RelativeToolTip": "..\\Model\\DataModels\\RoomEquipment.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-13T11:10:06.782Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Building.cs",
+              "DocumentMoniker": "C:\\Users\\Student\\Documents\\Taranenko\\Model\\DataModels\\Building.cs",
+              "RelativeDocumentMoniker": "..\\Model\\DataModels\\Building.cs",
+              "ToolTip": "C:\\Users\\Student\\Documents\\Taranenko\\Model\\DataModels\\Building.cs",
+              "RelativeToolTip": "..\\Model\\DataModels\\Building.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-13T11:07:25.904Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Room.cs",
+              "DocumentMoniker": "C:\\Users\\Student\\Documents\\Taranenko\\Model\\DataModels\\Room.cs",
+              "RelativeDocumentMoniker": "..\\Model\\DataModels\\Room.cs",
+              "ToolTip": "C:\\Users\\Student\\Documents\\Taranenko\\Model\\DataModels\\Room.cs",
+              "RelativeToolTip": "..\\Model\\DataModels\\Room.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-13T11:04:55.681Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ReservationStatus.cs",
+              "DocumentMoniker": "C:\\Users\\Student\\Documents\\Taranenko\\Model\\DataModels\\ReservationStatus.cs",
+              "RelativeDocumentMoniker": "..\\Model\\DataModels\\ReservationStatus.cs",
+              "ToolTip": "C:\\Users\\Student\\Documents\\Taranenko\\Model\\DataModels\\ReservationStatus.cs",
+              "RelativeToolTip": "..\\Model\\DataModels\\ReservationStatus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-13T11:02:21.223Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Reservation.cs",
+              "DocumentMoniker": "C:\\Users\\Student\\Documents\\Taranenko\\Model\\DataModels\\Reservation.cs",
+              "RelativeDocumentMoniker": "..\\Model\\DataModels\\Reservation.cs",
+              "ToolTip": "C:\\Users\\Student\\Documents\\Taranenko\\Model\\DataModels\\Reservation.cs",
+              "RelativeToolTip": "..\\Model\\DataModels\\Reservation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-13T10:59:53.95Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "EventType.cs",
+              "DocumentMoniker": "C:\\Users\\Student\\Documents\\Taranenko\\Model\\DataModels\\EventType.cs",
+              "RelativeDocumentMoniker": "..\\Model\\DataModels\\EventType.cs",
+              "ToolTip": "C:\\Users\\Student\\Documents\\Taranenko\\Model\\DataModels\\EventType.cs",
+              "RelativeToolTip": "..\\Model\\DataModels\\EventType.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-13T10:57:22.566Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Event.cs",
               "DocumentMoniker": "C:\\Users\\Student\\Documents\\Taranenko\\Model\\DataModels\\Event.cs",
               "RelativeDocumentMoniker": "..\\Model\\DataModels\\Event.cs",
               "ToolTip": "C:\\Users\\Student\\Documents\\Taranenko\\Model\\DataModels\\Event.cs",
               "RelativeToolTip": "..\\Model\\DataModels\\Event.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAABAAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-13T10:44:45.59Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Class1.cs",
-              "DocumentMoniker": "C:\\Users\\Student\\Documents\\Taranenko\\Services\\Class1.cs",
-              "RelativeDocumentMoniker": "..\\Services\\Class1.cs",
-              "ToolTip": "C:\\Users\\Student\\Documents\\Taranenko\\Services\\Class1.cs",
-              "RelativeToolTip": "..\\Services\\Class1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-13T10:43:00.669Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Class1.cs",
-              "DocumentMoniker": "C:\\Users\\Student\\Documents\\Taranenko\\DAL\\Class1.cs",
-              "RelativeDocumentMoniker": "..\\DAL\\Class1.cs",
-              "ToolTip": "C:\\Users\\Student\\Documents\\Taranenko\\DAL\\Class1.cs",
-              "RelativeToolTip": "..\\DAL\\Class1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-13T10:41:53.381Z",
+              "DocumentIndex": 10,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Student\\Documents\\Taranenko\\Lab05\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\Student\\Documents\\Taranenko\\Lab05\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAQwAgAAABdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-04-13T11:28:36.229Z",
               "EditorCaption": ""
             }
           ]
