@@ -1,6 +1,6 @@
 <Solution>
-  <Project Path="../DAL/DAL.csproj" />
-  <Project Path="../Model/Model.csproj" />
-  <Project Path="../Services/Services.csproj" />
-  <Project Path="Web.csproj" />
+  <Project Path="DAL/DAL.csproj" Id="d2d1c557-b270-4738-81c4-e613ae02c42b" />
+  <Project Path="Model/Model.csproj" Id="c21596d1-ba81-4cb4-ac2e-11886e0e3faa" />
+  <Project Path="Services/Services.csproj" Id="a8d81844-1363-4dcc-bb34-273aaa59d1ff" />
+  <Project Path="Web/Web.csproj" Id="95a440b9-a5ab-4a5f-a404-adfd305dec57" />
 </Solution>
