@@ -32,5 +32,16 @@ namespace DAL.EF
             base.OnConfiguring(optionsBuilder);
             optionsBuilder.UseLazyLoadingProxies();
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Reservation>()
+                .Property(x => x.Status)
+                .HasConversion<string>();
+            modelBuilder.Entity<RoomEquipment>()
+                .HasIndex(x => new { x.RoomId, x.EquipmentId })
+                .IsUnique();
+        }
     }
 }
