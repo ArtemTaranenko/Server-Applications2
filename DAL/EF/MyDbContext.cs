@@ -14,13 +14,13 @@ namespace DAL.EF
     public class MyDbContext : DbContext
     {
 
-        public virtual ICollection<EventType>? EventTypes {  get; set; }
-        public virtual ICollection<Building>? Buildings { get; set; }
-        public virtual ICollection<Equipment>? Equipments { get; set; }
-        public virtual ICollection<RoomEquipment>? RoomEquipments { get; set; }
-        public virtual ICollection<Reservation>? Reservations { get; set; }
-        public virtual ICollection<Event>? Events { get; set; }
-        public virtual ICollection<Room>? Rooms { get; set; }
+        public virtual DbSet<EventType>? EventTypes {  get; set; }
+        public virtual DbSet<Building>? Buildings { get; set; }
+        public virtual DbSet<Equipment>? Equipments { get; set; }
+        public virtual DbSet<RoomEquipment>? RoomEquipments { get; set; }
+        public virtual DbSet<Reservation>? Reservations { get; set; }
+        public virtual DbSet<Event>? Events { get; set; }
+        public virtual DbSet<Room>? Rooms { get; set; }
 
         public MyDbContext(DbContextOptions<MyDbContext> options) : base(options)
         {
