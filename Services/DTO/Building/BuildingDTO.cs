@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Services.DTO.Building
 {
-    public class BuildingDTO
+    public class BuildingDto
     {
         public int Id { get; set; }
         public string Name { get; set; } = null!;

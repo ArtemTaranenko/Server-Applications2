@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Services.DTO.Building
+namespace Services.DTO.EventType
 {
-    public class CreateBuildingDto
+    public class CreateEventTypeDto
     {
         public string Name { get; set; } = null!;
-        public string Address { get; set; } = null!;
         public string? Description { get; set; }
     }
 }
