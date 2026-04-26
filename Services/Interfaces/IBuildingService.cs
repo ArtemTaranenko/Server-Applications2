@@ -7,10 +7,10 @@ namespace Services.Interfaces
 {
     public interface IBuildingService
     {
-        Task<List<BuildingDTO>> GetAllAsync();
-        Task<BuildingDTO?> GetByIdAsync(int id);
-        Task<int> CreateAsync(CreateBuildingDTO dto);
-        Task<int> UpdateAsync(UpdateBuildingDTO dto);
+        Task<List<BuildingDto>> GetAllAsync();
+        Task<BuildingDto?> GetByIdAsync(int id);
+        Task<int> CreateAsync(CreateBuildingDto dto);
+        Task<bool> UpdateAsync(UpdateBuildingDto dto);
         Task<bool> DeleteAsync(int id);
     }
 }

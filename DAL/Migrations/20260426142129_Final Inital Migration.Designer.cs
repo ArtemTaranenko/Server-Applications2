@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DAL.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    [Migration("20260426133232_Fix Types")]
-    partial class FixTypes
+    [Migration("20260426142129_Final Inital Migration")]
+    partial class FinalInitalMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -49,7 +49,7 @@ namespace DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Building");
+                    b.ToTable("Buildings");
                 });
 
             modelBuilder.Entity("Model.DataModels.Equipment", b =>
@@ -72,7 +72,7 @@ namespace DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Equipment");
+                    b.ToTable("Equipments");
                 });
 
             modelBuilder.Entity("Model.DataModels.Event", b =>
@@ -106,7 +106,7 @@ namespace DAL.Migrations
 
                     b.HasIndex("EventTypeId");
 
-                    b.ToTable("Event");
+                    b.ToTable("Events");
                 });
 
             modelBuilder.Entity("Model.DataModels.EventType", b =>
@@ -126,7 +126,7 @@ namespace DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("EventType");
+                    b.ToTable("EventTypes");
                 });
 
             modelBuilder.Entity("Model.DataModels.Reservation", b =>
@@ -165,7 +165,7 @@ namespace DAL.Migrations
 
                     b.HasIndex("RoomId");
 
-                    b.ToTable("Reservation");
+                    b.ToTable("Reservations");
                 });
 
             modelBuilder.Entity("Model.DataModels.Room", b =>
@@ -196,7 +196,7 @@ namespace DAL.Migrations
 
                     b.HasIndex("BuildingId");
 
-                    b.ToTable("Room");
+                    b.ToTable("Rooms");
                 });
 
             modelBuilder.Entity("Model.DataModels.RoomEquipment", b =>
@@ -223,7 +223,7 @@ namespace DAL.Migrations
                     b.HasIndex("RoomId", "EquipmentId")
                         .IsUnique();
 
-                    b.ToTable("RoomEquipment");
+                    b.ToTable("RoomEquipments");
                 });
 
             modelBuilder.Entity("Model.DataModels.Event", b =>
