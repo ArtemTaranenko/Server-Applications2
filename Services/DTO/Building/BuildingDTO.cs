@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Model.DataModels
+namespace Services.DTO.Building
 {
-    public class Building
+    public class BuildingDTO
     {
         public int Id { get; set; }
         public string Name { get; set; } = null!;
         public string Address { get; set; } = null!;
         public string? Description { get; set; }
-        public virtual ICollection<Room>? Rooms { get; set; }
     }
 }
