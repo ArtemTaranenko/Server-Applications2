@@ -90,7 +90,9 @@ namespace Services.Services
                                     Id = e.Id,
                                     Quantity = e.Quantity,
                                     RoomId = e.RoomId,
-                                    EquipmentId = e.EquipmentId
+                                    RoomName = e.Room.Name,
+                                    EquipmentId = e.EquipmentId,
+                                    EquipmentName = e.Equipment.Name
                                 })
                                 .ToList()
                 })
