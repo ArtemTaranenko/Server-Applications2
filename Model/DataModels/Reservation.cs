@@ -13,8 +13,8 @@ namespace Model.DataModels
         public DateTime CreatedAt { get; set; }
         public string? Notes { get; set; }
         public int RoomId { get; set; }
-        public virtual Room? Room { get; set; }
+        public virtual Room Room { get; set; } = null!;
         public int EventId { get; set; }
-        public virtual Event? Event { get; set; }
+        public virtual Event Event { get; set; } = null!;
     }
 }
