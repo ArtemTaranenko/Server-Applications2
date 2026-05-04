@@ -15,7 +15,6 @@
     <Folder Include="DTO\Equipment\" />
     <Folder Include="DTO\Event\" />
     <Folder Include="DTO\EventType\" />
-    <Folder Include="DTO\RoomEquipment\" />
     <Folder Include="DTO\Room\" />
     <Folder Include="DTO\Reservation\" />
     <Folder Include="Common\" />

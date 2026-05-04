@@ -1,0 +1,19 @@
+﻿using Services.DTO.Event;
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Services.Interfaces
+{
+    public interface IEventService
+    {
+        Task<List<EventDto>> GetAllAsync();
+        Task<List<EventDto>> GetPublicEventsAsync();
+        Task<List<EventDto>> GetByEventTypeIdAsync(int eventTypeId);
+        Task<EventDto?> GetByIdAsync(int id);
+        Task<int> CreateAsync(CreateEventDto dto);
+        Task<bool> UpdateAsync(UpdateEventDto dto);
+        Task<bool> DeleteAsync(int id);
+
+    }
+}
