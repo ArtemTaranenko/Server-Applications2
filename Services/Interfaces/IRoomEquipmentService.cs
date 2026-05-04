@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Services.Interfaces
 {
-    public interface IRoomEquipment
+    public interface IRoomEquipmentService
     {
         Task<List<RoomEquipmentDto>> GetAllAsync();
         Task<List<RoomEquipmentDto>> GetByRoomIdAsync(int roomId);
