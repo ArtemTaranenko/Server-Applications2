@@ -10,7 +10,7 @@ namespace Services.Interfaces
         Task<List<EventDto>> GetAllAsync();
         Task<List<EventDto>> GetPublicEventsAsync();
         Task<List<EventDto>> GetByEventTypeIdAsync(int eventTypeId);
-        Task<EventDto?> GetByIdAsync(int id);
+        Task<EventDetailsDto?> GetByIdAsync(int id);
         Task<int> CreateAsync(CreateEventDto dto);
         Task<bool> UpdateAsync(UpdateEventDto dto);
         Task<bool> DeleteAsync(int id);

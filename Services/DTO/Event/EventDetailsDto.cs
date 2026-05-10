@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Services.DTO.Event
 {
-    public class EventDetails
+    public class EventDetailsDto
     {
         public int Id { get; set; }
         public string Title { get; set; } = null!;
