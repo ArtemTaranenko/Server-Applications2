@@ -9,8 +9,8 @@ namespace Model.DataModels
         public int Id {  get; set; }
         public int Quantity { get; set; }
         public int RoomId { get; set; }
-        public virtual Room? Room { get; set; }
+        public virtual Room Room { get; set; } = null!;
         public int EquipmentId { get; set; }
-        public virtual Equipment? Equipment { get; set; }
+        public virtual Equipment Equipment { get; set; } = null!;
     }
 }

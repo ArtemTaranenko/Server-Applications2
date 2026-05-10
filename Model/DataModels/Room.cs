@@ -12,8 +12,8 @@ namespace Model.DataModels
         public int Floor { get; set; }
         public bool IsActive { get; set; }
         public int BuildingId { get; set; }
-        public virtual Building? Building { get; set; }
+        public virtual Building Building { get; set; } = null!;
         public virtual ICollection<Reservation>? Reservations { get; set; }
-        public virtual ICollection<RoomEquipment>? RoomEquipments { get; set; }
+        public virtual ICollection<RoomEquipment> RoomEquipments { get; set; } = null!;
     }
 }

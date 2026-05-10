@@ -11,7 +11,7 @@ namespace Model.DataModels
         public bool IsPublic { get; set; }
         public DateTime CreatedAt {  get; set; }
         public int EventTypeId { get; set; }
-        public virtual EventType? EventType { get; set; }
+        public virtual EventType EventType { get; set; } = null!;
         public virtual ICollection<Reservation>? Reservations { get; set; }
     }
 }
