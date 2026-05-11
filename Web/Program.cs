@@ -1,7 +1,13 @@
 using DAL.EF;
 using Microsoft.EntityFrameworkCore;
+using Services.Services;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddAutoMapper(
+    _ => { },
+    typeof(Program).Assembly,
+    typeof(BaseService).Assembly);
 
 builder.Services.AddControllersWithViews();
 
