@@ -1,3 +1,4 @@
+using AutoMapper;
 using DAL.EF;
 using Microsoft.EntityFrameworkCore;
 using Services.Services;
@@ -16,6 +17,12 @@ builder.Services.AddDbContext<MyDbContext>(x => x.UseSqlServer(connectionString)
 
 
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var mapper = scope.ServiceProvider.GetRequiredService<IMapper>();
+    mapper.ConfigurationProvider.AssertConfigurationIsValid();
+}
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

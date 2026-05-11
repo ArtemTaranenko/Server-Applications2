@@ -1,0 +1,30 @@
+﻿using AutoMapper;
+using Services.DTO.RoomEquipment;
+using Model.DataModels;
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Services.Mapping
+{
+    public class RoomEquipmentProfile: Profile
+    {
+        public RoomEquipmentProfile()
+        {
+            CreateMap<RoomEquipment, RoomEquipmentDto>()
+                .ForMember(d => d.RoomName, o => o.MapFrom(s => s.Room.Name))
+                .ForMember(d => d.EquipmentName, o => o.MapFrom(s => s.Equipment.Name));
+
+            CreateMap<RoomEquipmentDto, RoomEquipment>()
+                .ForMember(d => d.Id, o => o.Ignore())
+                .ForMember(d => d.Room, o => o.Ignore())
+                .ForMember(d => d.Equipment, o => o.Ignore());
+
+            CreateMap<UpdateRoomEquipmentDto, RoomEquipment>()
+                .ForMember(d => d.RoomId, o => o.Ignore())
+                .ForMember(d => d.Room, o => o.Ignore())
+                .ForMember(d => d.EquipmentId, o => o.Ignore())
+                .ForMember(d => d.Equipment, o => o.Ignore());
+        }
+    }
+}

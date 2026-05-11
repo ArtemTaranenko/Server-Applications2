@@ -1,4 +1,6 @@
-﻿using DAL.EF;
+﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
+using DAL.EF;
 using Microsoft.EntityFrameworkCore;
 using Model.DataModels;
 using Services.DTO.RoomEquipment;
@@ -11,7 +13,7 @@ namespace Services.Services
 {
     public class RoomEquipmentService: BaseService, IRoomEquipmentService
     {
-        RoomEquipmentService(MyDbContext dbContext): base(dbContext)
+        RoomEquipmentService(MyDbContext dbContext, IMapper mapper): base(dbContext, mapper)
         {
 
         }
@@ -19,17 +21,12 @@ namespace Services.Services
         public async Task<List<RoomEquipmentDto>> GetAllAsync()
         {
             return await _dbContext.RoomEquipments
-                         .AsNoTracking()
-                         .Select(x => new RoomEquipmentDto
-                         {
-                             Id = x.Id,
-                             Quantity = x.Quantity,
-                             RoomId = x.RoomId,
-                             RoomName = x.Room.Name,
-                             EquipmentId = x.EquipmentId,
-                             EquipmentName = x.Equipment.Name
-                         })
-                         .ToListAsync();
+                .AsNoTracking()
+                .OrderBy(x => x.Room.Building.Name)
+                .ThenBy(x => x.Room.Name)
+                .ThenBy(x => x.Equipment.Name)
+                .ProjectTo<RoomEquipmentDto>(_mapper.ConfigurationProvider)
+                .ToListAsync();
         }
 
         public async Task<List<RoomEquipmentDto>> GetByRoomIdAsync(int roomId)
@@ -37,15 +34,10 @@ namespace Services.Services
             return await _dbContext.RoomEquipments
                 .AsNoTracking()
                 .Where(x => x.RoomId == roomId)
-                .Select(x => new RoomEquipmentDto
-                {
-                    Id = x.Id,
-                    Quantity = x.Quantity,
-                    RoomId = x.RoomId,
-                    RoomName = x.Room.Name,
-                    EquipmentId = x.EquipmentId,
-                    EquipmentName = x.Equipment.Name
-                })
+                .OrderBy(x => x.Room.Building.Name)
+                .ThenBy(x => x.Room.Name)
+                .ThenBy(x => x.Equipment.Name)
+                .ProjectTo<RoomEquipmentDto>(_mapper.ConfigurationProvider)
                 .ToListAsync();
         }
 
@@ -54,15 +46,10 @@ namespace Services.Services
             return await _dbContext.RoomEquipments
                 .AsNoTracking()
                 .Where(x => x.Id == id)
-                .Select(x => new RoomEquipmentDto
-                {
-                    Id = x.Id,
-                    Quantity = x.Quantity,
-                    RoomId = x.RoomId,
-                    RoomName = x.Room.Name,
-                    EquipmentId = x.EquipmentId,
-                    EquipmentName = x.Equipment.Name
-                })
+                .OrderBy(x => x.Room.Building.Name)
+                .ThenBy(x => x.Room.Name)
+                .ThenBy(x => x.Equipment.Name)
+                .ProjectTo<RoomEquipmentDto>(_mapper.ConfigurationProvider)
                 .FirstOrDefaultAsync();
         }
         public async Task<int> CreateAsync(CreateRoomEquipmentDto dto)
@@ -70,12 +57,7 @@ namespace Services.Services
             if (dto == null)
                 throw new ArgumentNullException(nameof(dto));
 
-            var roomEquipment = new RoomEquipment
-            {
-                Quantity = dto.Quantity,
-                RoomId = dto.RoomId,
-                EquipmentId = dto.EquipmentId
-            };
+            var roomEquipment = _mapper.Map<RoomEquipment, RoomEquipmentDto>(dto);
 
             _dbContext.RoomEquipments.Add(roomEquipment);
             await _dbContext.SaveChangesAsync();
@@ -89,9 +71,11 @@ namespace Services.Services
                                 .FirstOrDefaultAsync(x => x.Id == dto.Id);
             if (entity == null)
                 return false;
-           
-            entity.Id = dto.Id;
-            entity.Quantity = dto.Quantity;
+
+            if (dto.Quantity <= 0)
+                throw new InvalidOperationException("Ilość wyposażenia musi być większa od zera");
+
+            _mapper.Map(dto, entity);
             await _dbContext.SaveChangesAsync();
             return true;
         }
