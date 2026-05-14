@@ -57,7 +57,7 @@ namespace Services.Services
             if (dto == null)
                 throw new ArgumentNullException(nameof(dto));
 
-            var roomEquipment = _mapper.Map<RoomEquipment, RoomEquipmentDto>(dto);
+            var roomEquipment = _mapper.Map<CreateRoomEquipmentDto, RoomEquipment>(dto);
 
             _dbContext.RoomEquipments.Add(roomEquipment);
             await _dbContext.SaveChangesAsync();

@@ -6,12 +6,14 @@ using Microsoft.EntityFrameworkCore;
 using Services.DTO.Equipment;
 using Services.Interfaces;
 using Model.DataModels;
+using AutoMapper;
+using AutoMapper.QueryableExtensions;
 
 namespace Services.Services
 {
     public class EquipmentService: BaseService, IEquipmentService
     {
-        public EquipmentService(MyDbContext dbContext): base(dbContext)
+        public EquipmentService(MyDbContext dbContext, IMapper mapper): base(dbContext, mapper)
         {
 
         }
@@ -20,13 +22,7 @@ namespace Services.Services
             return await _dbContext.Equipments
                          .AsNoTracking()
                          .OrderBy(x => x.Name)
-                         .Select(x => new EquipmentDto
-                         {
-                             Id = x.Id,
-                             Name = x.Name,
-                             Description = x.Description,
-                             IsMobile = x.IsMobile
-                         })
+                         .ProjectTo<EquipmentDto>(_mapper.ConfigurationProvider)
                          .ToListAsync();
         }
 
@@ -35,13 +31,7 @@ namespace Services.Services
             return await _dbContext.Equipments
                          .AsNoTracking()
                          .Where(x => x.Id == id)
-                         .Select(x => new EquipmentDto
-                         {
-                             Id = x.Id,
-                             Name = x.Name,
-                             Description = x.Description,
-                             IsMobile = x.IsMobile
-                         })
+                         .ProjectTo<EquipmentDto>(_mapper.ConfigurationProvider)
                          .FirstOrDefaultAsync();
         }
 
@@ -49,12 +39,7 @@ namespace Services.Services
         {
             if (dto == null)
                 throw new ArgumentNullException(nameof(dto));
-            var equipment = new Equipment
-            {
-                Name = dto.Name,
-                Description = dto.Description,
-                IsMobile = dto.IsMobile
-            };
+            var equipment = _mapper.Map<Equipment>(dto);
             _dbContext.Equipments.Add(equipment);
             await _dbContext.SaveChangesAsync();
             return equipment.Id;
@@ -65,9 +50,7 @@ namespace Services.Services
             var entity = await _dbContext.Equipments.FirstOrDefaultAsync(x => x.Id == dto.Id);
             if (entity == null)
                 return false;
-            entity.Name = dto.Name;
-            entity.Description = dto.Description;
-            entity.IsMobile = dto.IsMobile;
+            _mapper.Map(dto, entity);
 
             await _dbContext.SaveChangesAsync();
             return true;

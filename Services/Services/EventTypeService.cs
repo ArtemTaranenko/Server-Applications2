@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using DAL.EF;
 using Microsoft.EntityFrameworkCore;
 using Model.DataModels;
@@ -12,7 +14,7 @@ namespace Services.Services
 {
     public class EventTypeService: BaseService, IEventTypeService
     {
-        public EventTypeService(MyDbContext dbContext): base(dbContext)
+        public EventTypeService(MyDbContext dbContext, IMapper mapper): base(dbContext, mapper)
         {
 
         }
@@ -22,12 +24,7 @@ namespace Services.Services
             return await _dbContext.EventTypes
                 .AsNoTracking()
                 .OrderBy(x => x.Name)
-                .Select(x => new EventTypeDto
-                {
-                    Id = x.Id,
-                    Name = x.Name,
-                    Description = x.Description
-                })
+                .ProjectTo<EventTypeDto>(_mapper.ConfigurationProvider)
                 .ToListAsync();
         }
 
@@ -36,12 +33,7 @@ namespace Services.Services
             return await _dbContext.EventTypes
                 .AsNoTracking()
                 .Where(x => x.Id == id)
-                .Select(x => new EventTypeDto
-                {
-                    Id = x.Id,
-                    Name = x.Name,
-                    Description = x.Description
-                })
+                .ProjectTo<EventTypeDto>(_mapper.ConfigurationProvider)
                 .FirstOrDefaultAsync();
         }
 
@@ -49,11 +41,7 @@ namespace Services.Services
         { 
             if (dto == null)
                 throw new ArgumentNullException(nameof(dto));
-            var eventType = new EventType
-            {
-                Name = dto.Name,
-                Description = dto.Description
-            };
+            var eventType = _mapper.Map<EventType>(dto);
             _dbContext.EventTypes.Add(eventType);
             await _dbContext.SaveChangesAsync();
             return eventType.Id;
@@ -64,8 +52,7 @@ namespace Services.Services
             var entity = await _dbContext.EventTypes.FirstOrDefaultAsync(x => x.Id == dto.Id);
             if (entity == null)
                 return false;
-            entity.Name = dto.Name;
-            entity.Description = dto.Description;
+            _mapper.Map(dto, entity);
             
             await _dbContext.SaveChangesAsync();
             return true;

@@ -15,7 +15,7 @@ namespace Services.Mapping
                 .ForMember(d => d.RoomName, o => o.MapFrom(s => s.Room.Name))
                 .ForMember(d => d.EquipmentName, o => o.MapFrom(s => s.Equipment.Name));
 
-            CreateMap<RoomEquipmentDto, RoomEquipment>()
+            CreateMap<CreateRoomEquipmentDto, RoomEquipment>()
                 .ForMember(d => d.Id, o => o.Ignore())
                 .ForMember(d => d.Room, o => o.Ignore())
                 .ForMember(d => d.Equipment, o => o.Ignore());
