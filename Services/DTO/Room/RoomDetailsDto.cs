@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Services.DTO.RoomEquipment;
+using Services.DTO.Reservation;
 
 namespace Services.DTO.Room
 {
@@ -15,5 +16,6 @@ namespace Services.DTO.Room
         public int BuildingId { get; set; }
         public string BuildingName { get; set; } = null!;
         public List<RoomEquipmentDto> Equipment { get; set; } = null!;
+        public List<ReservationDto> Reservations { get; set; } = null!;
     }
 }

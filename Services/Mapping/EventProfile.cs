@@ -13,8 +13,7 @@ namespace Services.Mapping
         {
             CreateMap<Event, EventDto>();
 
-            CreateMap<Event, EventDetailsDto>()
-                .ForMember(d => d.Reservations, o => o.MapFrom(d => d.Reservations));
+            CreateMap<Event, EventDetailsDto>();
 
             CreateMap<CreateEventDto, Event>()
                 .ForMember(d => d.Id, o => o.Ignore())
