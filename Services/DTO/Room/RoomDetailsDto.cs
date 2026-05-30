@@ -15,7 +15,7 @@ namespace Services.DTO.Room
         public bool IsActive { get; set; }
         public int BuildingId { get; set; }
         public string BuildingName { get; set; } = null!;
-        public List<RoomEquipmentDto> Equipment { get; set; } = null!;
+        public List<RoomEquipmentDto> RoomEquipments { get; set; } = null!;
         public List<ReservationDto> Reservations { get; set; } = null!;
     }
 }

@@ -11,6 +11,7 @@ namespace Services.DTO.Room
         public int Capacity { get; set; }
         public int Floor { get; set; }
         public bool IsActive { get; set; }
-        public int BuildinId {  get; set; }
+        public int BuildingId {  get; set; }
+
     }
 }

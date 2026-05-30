@@ -14,10 +14,12 @@ namespace Services.Mapping
             CreateMap<Reservation, ReservationDto>();
 
             CreateMap<CreateReservationDto, Reservation>()
+                .ForMember(d => d.Id, o => o.Ignore())
                 .ForMember(d => d.Event, o => o.Ignore())
                 .ForMember(d => d.Room, o => o.Ignore());
             
             CreateMap<UpdateReservationDto, Reservation>()
+                .ForMember(d => d.Id, o => o.Ignore())
                 .ForMember(d => d.Event, o => o.Ignore())
                 .ForMember(d => d.Room, o => o.Ignore());
         }

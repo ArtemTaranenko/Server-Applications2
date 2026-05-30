@@ -11,5 +11,6 @@ namespace Services.DTO.Event
         public int ParticipantsLimit { get; set; }
         public bool IsPublic { get; set; }
         public int EventTypeId { get; set; }
+        public DateTime CreatedAt { get; set; }
     }
 }

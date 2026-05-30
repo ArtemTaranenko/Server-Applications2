@@ -46,16 +46,14 @@ namespace Services.Services
         {
             if (dto == null)
                 throw new ArgumentNullException(nameof(dto));
-
-            if (await HasTimeConflictAsync(dto.RoomId, dto.StartTime, dto.EndTime, dto.Id))
+            var entity = _mapper.Map<Reservation>(dto);
+            if (await HasTimeConflictAsync(entity.RoomId, entity.StartTime, entity.EndTime, entity.Id))
                 throw new InvalidOperationException("Konflikt czasowy rezerwacji");
             if (await CanRoomAccomodateEventAsync(dto.RoomId, dto.EventId))
                 throw new InvalidOperationException("Sala nie może umieścić określoną liczbę uczestników wydarzenia");
             if (dto.EndTime <= dto.StartTime)
                 throw new InvalidOperationException(
                     "Czas zakończenia musi być późniejszy niż czas rozpoczęcia");
-
-            var entity = _mapper.Map<Reservation>(dto);
 
             _dbContext.Add(entity);
             await _dbContext.SaveChangesAsync();
