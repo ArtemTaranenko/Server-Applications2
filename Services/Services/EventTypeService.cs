@@ -37,7 +37,7 @@ namespace Services.Services
                 .FirstOrDefaultAsync();
         }
 
-        public async Task<int> CreateAsync(EventTypeDto dto)
+        public async Task<int> CreateAsync(CreateEventTypeDto dto)
         { 
             if (dto == null)
                 throw new ArgumentNullException(nameof(dto));
@@ -47,7 +47,7 @@ namespace Services.Services
             return eventType.Id;
         }
         
-        public async Task<bool> UpdateAsync (EventTypeDto dto)
+        public async Task<bool> UpdateAsync (UpdateEventTypeDto dto)
         {
             var entity = await _dbContext.EventTypes.FirstOrDefaultAsync(x => x.Id == dto.Id);
             if (entity == null)

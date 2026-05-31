@@ -9,8 +9,8 @@ namespace Services.Interfaces
     {
         Task<List<EquipmentDto>> GetAllAsync();
         Task<EquipmentDto?> GetByIdAsync(int id);
-        Task<int> CreateAsync(EquipmentDto dto);
-        Task<bool> UpdateAsync(EquipmentDto dto);
+        Task<int> CreateAsync(CreateEquipmentDto dto);
+        Task<bool> UpdateAsync(UpdateEquipmentDto dto);
         Task<bool> DeleteAsync(int id);
     }
 }

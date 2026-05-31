@@ -35,7 +35,7 @@ namespace Services.Services
                          .FirstOrDefaultAsync();
         }
 
-        public async Task<int> CreateAsync(EquipmentDto dto)
+        public async Task<int> CreateAsync(CreateEquipmentDto dto)
         {
             if (dto == null)
                 throw new ArgumentNullException(nameof(dto));
@@ -45,7 +45,7 @@ namespace Services.Services
             return equipment.Id;
         }
 
-        public async Task<bool> UpdateAsync(EquipmentDto dto)
+        public async Task<bool> UpdateAsync(UpdateEquipmentDto dto)
         {
             var entity = await _dbContext.Equipments.FirstOrDefaultAsync(x => x.Id == dto.Id);
             if (entity == null)
