@@ -13,7 +13,7 @@ namespace Services.Services
 {
     public class RoomEquipmentService: BaseService, IRoomEquipmentService
     {
-        RoomEquipmentService(MyDbContext dbContext, IMapper mapper): base(dbContext, mapper)
+        public RoomEquipmentService(MyDbContext dbContext, IMapper mapper): base(dbContext, mapper)
         {
 
         }

@@ -109,7 +109,7 @@ namespace Tests.Unit.Services
                 .Select(x => x.Id)
                 .FirstAsync();
 
-            await Assert.ThrowsAsync<InvalidOperationException>(()  => service.DeleteAsync(roomId));
+            await Assert.ThrowsAsync<InvalidOperationException>(() => service.DeleteAsync(roomId));
         }
     }
 }
