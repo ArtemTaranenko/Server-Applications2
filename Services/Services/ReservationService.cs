@@ -71,7 +71,7 @@ namespace Services.Services
                     "Czas zakończenia musi być późniejszy niż czas rozpoczęcia");
             var entity = await _dbContext.Reservations.FirstOrDefaultAsync(x => x.Id == dto.Id);
             if (entity == null)
-                throw new ArgumentNullException(nameof(entity));
+                return false;
             entity = _mapper.Map<Reservation>(dto);
             await _dbContext.SaveChangesAsync();
             return true;

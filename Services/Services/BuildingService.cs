@@ -9,6 +9,7 @@ using Services.Interfaces;
 using Model.DataModels;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
+using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
 
 namespace Services.Services
 {
@@ -65,6 +66,10 @@ namespace Services.Services
 
             if (building == null)
                 return false;
+
+            if (building.Rooms != null)
+                throw new InvalidOperationException("Nie można usunąć budynku, który posiada pokoje");
+
             _dbContext.Buildings.Remove(building);
             await _dbContext.SaveChangesAsync();
             return true;

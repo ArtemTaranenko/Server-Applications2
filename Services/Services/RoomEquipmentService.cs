@@ -57,6 +57,12 @@ namespace Services.Services
             if (dto == null)
                 throw new ArgumentNullException(nameof(dto));
 
+            if (await _dbContext.RoomEquipments.AnyAsync(x => x.EquipmentId == dto.EquipmentId && x.RoomId == dto.RoomId))
+                throw new InvalidOperationException("Wyposażenie jest uż przypisane do sali");
+
+            if (dto.Quantity <= 0)
+                throw new InvalidOperationException("Niepoprawna ilość sprzętu");
+
             var roomEquipment = _mapper.Map<CreateRoomEquipmentDto, RoomEquipment>(dto);
 
             _dbContext.RoomEquipments.Add(roomEquipment);
@@ -67,7 +73,6 @@ namespace Services.Services
         public async Task<bool> UpdateAsync(UpdateRoomEquipmentDto dto)
         { 
             var entity = await _dbContext.RoomEquipments
-                                .AsNoTracking()
                                 .FirstOrDefaultAsync(x => x.Id == dto.Id);
             if (entity == null)
                 return false;

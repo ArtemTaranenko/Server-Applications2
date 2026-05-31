@@ -97,8 +97,8 @@ namespace Services.Services
             var entity = await _dbContext.Events.FindAsync(id);
             if (entity == null)
                 return false;
-            if (entity.Reservations == null)
-                throw new InvalidOperationException(nameof(entity));
+            if (entity.Reservations != null)
+                throw new InvalidOperationException("Nie można usunąć wydarzenia, które posiada rezerwację");
             _dbContext.Remove(entity);
             await _dbContext.SaveChangesAsync();
             return true;

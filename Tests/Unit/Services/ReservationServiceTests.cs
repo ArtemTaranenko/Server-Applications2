@@ -166,8 +166,8 @@ namespace Tests.Unit.Services
 			var result = await service.UpdateAsync(new UpdateReservationDto
 			{
 				Id = 9999,
-				StartTime = DateTime.UtcNow.AddDays(2),
-				EndTime = DateTime.UtcNow.AddDays(2).AddHours(3),
+				StartTime = DateTime.UtcNow.AddDays(10),
+				EndTime = DateTime.UtcNow.AddDays(10).AddHours(2),
 				Status = Model.DataModels.ReservationStatus.Cancelled,
 				Notes = "Test Notes",
 				RoomId = roomId,
