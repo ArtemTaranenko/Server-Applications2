@@ -16,7 +16,7 @@ namespace Services.Services
 {
     public class EventService: BaseService, IEventService
     {
-        EventService(MyDbContext dbContext, IMapper mapper): base(dbContext, mapper) { }
+        public EventService(MyDbContext dbContext, IMapper mapper): base(dbContext, mapper) { }
 
         public async Task<List<EventDto>> GetAllAsync()
         {
