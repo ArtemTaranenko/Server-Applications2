@@ -1,7 +1,7 @@
 using AutoMapper;
 using Microsoft.Extensions.Logging.Abstractions;
 using Services.Mapping;
-using Web.Mapping;
+
 
 namespace Tests.TestInfrastructure
 {
@@ -18,7 +18,7 @@ namespace Tests.TestInfrastructure
                 cfg.AddProfile<EventTypeProfile>();
                 cfg.AddProfile<EventProfile>();
                 cfg.AddProfile<ReservationProfile>();
-                cfg.AddProfile<BuildingViewModelProfile>();
+                //cfg.AddProfile<BuildingViewModelProfile>();
             }, NullLoggerFactory.Instance);
 
             config.AssertConfigurationIsValid();
