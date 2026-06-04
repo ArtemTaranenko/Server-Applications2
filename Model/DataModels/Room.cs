@@ -13,7 +13,7 @@ namespace Model.DataModels
         public bool IsActive { get; set; }
         public int BuildingId { get; set; }
         public virtual Building Building { get; set; } = null!;
-        public virtual ICollection<Reservation>? Reservations { get; set; }
-        public virtual ICollection<RoomEquipment> RoomEquipments { get; set; } = null!;
+        public virtual List<Reservation>? Reservations { get; set; }
+        public virtual List<RoomEquipment> RoomEquipments { get; set; } = null!;
     }
 }

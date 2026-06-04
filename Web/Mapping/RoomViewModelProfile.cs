@@ -10,8 +10,10 @@ namespace Web.Mapping
         public RoomViewModelProfile()
         {
             CreateMap<RoomDto, RoomListItemViewModel>();
-            CreateMap<RoomDetailsDto, RoomDetailsViewModel>();
-            CreateMap<RoomEquipmentItemDto, RoomEquipmentItemViewModel>();
+            CreateMap<RoomDetailsDto, RoomDetailsViewModel>()
+                .ForMember(d => d.Equipment, o => o.MapFrom(x => x.RoomEquipments));
+                ;
+            CreateMap<RoomEquipmentDto, RoomEquipmentItemViewModel>();
             CreateMap<RoomDetailsDto, EditRoomViewModel>()
                 .ForMember(d => d.Buildings, o => o.Ignore());
             CreateMap<RoomDetailsDto, DeleteRoomViewModel>();

@@ -14,6 +14,6 @@ namespace Services.DTO.Event
         public bool IsPublic { get; set; }
         public DateTime CreatedAt { get; set; }
         public int EventTypeId { get; set; }
-        public ICollection<ReservationDto>? Reservations { get; set; }
+        public List<ReservationDto>? Reservations { get; set; }
     }
 }

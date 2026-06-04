@@ -10,6 +10,6 @@ namespace Model.DataModels
         public string Name { get; set; } = null!;
         public string? Description { get; set; }
         public bool IsMobile { get; set; }
-        public virtual ICollection<RoomEquipment>? RoomEquipments { get; set; }
+        public virtual List<RoomEquipment>? RoomEquipments { get; set; }
     }
 }

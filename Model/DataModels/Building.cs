@@ -10,6 +10,6 @@ namespace Model.DataModels
         public string Name { get; set; } = null!;
         public string Address { get; set; } = null!;
         public string? Description { get; set; }
-        public virtual ICollection<Room> Rooms { get; set; } = null!;
+        public virtual List<Room> Rooms { get; set; } = null!;
     }
 }
