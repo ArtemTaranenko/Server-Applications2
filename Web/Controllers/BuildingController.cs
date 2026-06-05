@@ -56,10 +56,10 @@ namespace Web.Controllers
 			if (!ModelState.IsValid)
 				return View(building);
 			var buildingDto = _mapper.Map<CreateBuildingDto>(building);
-			var newBuilding = await _buildingService.CreateAsync(buildingDto);
+			var newBuildingId = await _buildingService.CreateAsync(buildingDto);
 
 			SetSuccessMessage("Budynek został utrworzony");
-			return RedirectToAction("Index");
+			return View("Details", newBuildingId);
 		}
 
 		public async Task<IActionResult> Edit(int id)

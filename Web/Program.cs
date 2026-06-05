@@ -18,6 +18,7 @@ builder.Services.AddDbContext<MyDbContext>(x => x.UseSqlServer(connectionString)
 
 builder.Services.AddScoped<IBuildingService, BuildingService>();
 builder.Services.AddScoped<IRoomService, RoomService>();
+builder.Services.AddScoped<IEventTypeService, EventTypeService>();
 
 var app = builder.Build();
 

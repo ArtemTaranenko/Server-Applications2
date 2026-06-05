@@ -1,0 +1,17 @@
+﻿@model Web.ViewModels.EventType.DeleteEventTypeViewModel
+
+<div class="w3-card">
+
+	<h1> Usuń typ wydarzenia</h1>
+	<div class="w3-container">
+		<p><strong>Nazwa: </strong>@Model.Name</p>
+		<p><stong>Opis: </stong>@Model.Description</p>
+	</div>
+
+	<form asp-controller="EventType" asp-action="Delete" method="post">
+		<p>
+			<button type="submit" class="w3-button w3-red">Usuń</button>
+			<a asp-controller="EventType" asp-action="Index" class="w3-button w3-grey">Cancel</a>
+		</p>
+	</form>
+</div>

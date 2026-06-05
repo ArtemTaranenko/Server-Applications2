@@ -1,0 +1,31 @@
+﻿@model List<Web.ViewModels.EventType.EventTypeViewModel>
+
+<title>Lista typów wydarzeń</title>
+
+<div class="w3-card w3-container">
+	<p>
+		<a class="w3-button w3-blue w3-hover-blue-grey" asp-controller="EventType" asp-action="Create">Dodaj typ wydarzenia</a>
+	</p>
+	<div  class="w3-card">
+	<table class="w3-table-all w3-hoverable">
+		<thead>
+			<tr>
+				<td><strong>Nazwa </strong></td>
+				<td><strong>Opis </strong></td>
+				<td><strong>Akcji </strong></td>
+			</tr>
+		</thead>
+		@foreach (var type in Model)
+			{
+				<tr>
+					<td> @type.Name</td>
+					<td> @type.Description</td>
+					<td>
+						<a class="w3-button w3-green" asp-controller="EventType" asp-action="Edit" asp-route-id="@type.Id">Edytuj</a>
+						<a class="w3-button w3-red" asp-controller="EventType" asp-action="Delete" asp-route-id="@type.Id">Usuń</a>
+					</td>
+				</tr>
+			}
+		</table>
+	</div>
+</div>
