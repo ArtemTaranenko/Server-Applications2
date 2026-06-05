@@ -1,0 +1,35 @@
+﻿@model Web.ViewModels.Building.BuildingDetailsViewModel
+
+<div class="w3-card">
+	<h1> Szczegóły budynku</h1>
+	<p><strong>Nazwa: </strong> @Model.Name</p>
+	<p><strong>Adres: </strong> @Model.Address</p>
+	<p><strong>Opis: </strong> @Model.Description</p>
+	<div style="display: flex; gap: 10px; ">
+		<a asp-controller="Building" asp-action="Edit" asp-route-id="@Model.Id" class="w3-button w3-green">Edytuj budynek</a> 
+		<a asp-controller="Building" asp-action="Index" class="w3-button" style="background-color:aqua;">Powrót do listy budynków</a>
+	</div>
+	<p>Sale w budynku</p>
+	<div class="w3-card">
+		<table class="w3-table-all">
+			<thead>
+				<tr class="w3-light-grey">
+					<th>Nazwa</th>
+					<th>Pojemność</th>
+					<th>Piętro</th>
+					<th>Aktywna</th>
+				</tr>
+			</thead>
+			@foreach (var room in Model.Rooms)
+			{
+				<tr>
+					<td>@room.Name</td>
+					<td>@room.Capacity</td>
+					<td>@room.Floor</td>
+					<td>@room.IsActive</td>
+					<td><button class="w3-button w3-purple">Szczegóły sali</button></td>
+				</tr>
+			}
+		</table>
+	</div>
+</div>

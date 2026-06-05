@@ -1,6 +1,7 @@
 using AutoMapper;
 using DAL.EF;
 using Microsoft.EntityFrameworkCore;
+using Services.Interfaces;
 using Services.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +16,8 @@ builder.Services.AddControllersWithViews();
 var connectionString = builder.Configuration.GetConnectionString("MyConnection");
 builder.Services.AddDbContext<MyDbContext>(x => x.UseSqlServer(connectionString));
 
+builder.Services.AddScoped<IBuildingService, BuildingService>();
+builder.Services.AddScoped<IRoomService, RoomService>();
 
 var app = builder.Build();
 

@@ -1,0 +1,26 @@
+﻿@model Web.ViewModels.Building.EditBuildingViewModel
+
+<div class="w3-card">
+	<h1> Edytuj budynek</h1>
+	<div class="w3-container">
+		<form asp-controller="Building" asp-action="Edit" method="post">
+			<p>
+				<label asp-for="Name">Nazwa: </label>
+				<input asp-for="Name" class="w3-input w3-border" />
+			</p>
+			<p>
+				<label asp-for="Address">Adres: </label>
+				<input asp-for="Address" class="w3-input w3-border" />
+			</p>
+			<p>
+				<label asp-for="Description">Opis: </label>
+				<input asp-for="Description" class="w3-input w3-border" />
+			</p>
+			<p>
+				<button type="submit" class="w3-btn w3-green w3-border">Edytuj</button>
+				<a asp-controller="Building" asp-action="Index" style="background-color:lightgray;">Cancel</a>
+			</p>
+		</form>
+	</div>
+		
+</div>

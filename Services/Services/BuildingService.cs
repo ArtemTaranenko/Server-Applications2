@@ -67,8 +67,8 @@ namespace Services.Services
             if (building == null)
                 return false;
 
-            if (building.Rooms != null)
-                throw new InvalidOperationException("Nie można usunąć budynku, który posiada pokoje");
+            if (await _dbContext.Rooms.AnyAsync(r => r.BuildingId == id))
+				throw new InvalidOperationException("Nie można usunąć budynku, który posiada pokoje");
 
             _dbContext.Buildings.Remove(building);
             await _dbContext.SaveChangesAsync();

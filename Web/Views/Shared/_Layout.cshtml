@@ -1,4 +1,4 @@
-﻿@await Html.PartialAsync("_Messages")
+﻿
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -11,10 +11,11 @@
 		<header class="w3-panel w3-center w3-opacity">
 			<nav class="w3-bar w3-border">
 				<a class="w3-bar-item w3-button" asp-controller="Home" asp-action="Index"> Home</a>
-				<a class="w3-bar-item w3-button" asp-controller="Buildings" asp-action="Index"> Buildings</a>
+				<a class="w3-bar-item w3-button" asp-controller="Building" asp-action="Index"> Buildings</a>
 			</nav>
 		</header>
 		<main>
+			@await Html.PartialAsync("_Messages")
 			@RenderBody()
 		</main>
 

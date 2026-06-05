@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DAL.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    [Migration("20260426142129_Final Inital Migration")]
-    partial class FinalInitalMigration
+    [Migration("20260604180943_Initial Migration")]
+    partial class InitialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

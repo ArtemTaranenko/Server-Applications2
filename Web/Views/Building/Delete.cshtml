@@ -1,0 +1,14 @@
+﻿@model Web.ViewModels.Building.DeleteBuildingViewModel
+
+<div class="w3-card">
+	<h1> Usuń budynek</h1>
+	<p><strong>Nazwa: </strong> @Model.Name</p>
+	<p><strong>Adres: </strong> @Model.Address</p>
+	<p><strong>Opis: </strong> @Model.Description</p>
+	<div style="display: flex; gap: 10px; ">
+		<form asp-controller="Building" asp-action="Delete" method="post" asp-route-id="@Model.Id">
+			<button type ="submit" class="w3-button w3-red">Usuń</button>
+		</form>	
+		<a asp-controller="Building" asp-action="Index" class="w3-button" style="background-color:lightgray;">Cancel</a>
+	</div>
+</div>
