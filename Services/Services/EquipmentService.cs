@@ -61,7 +61,7 @@ namespace Services.Services
             var equipment = await _dbContext.Equipments.FindAsync(id);
             if (equipment == null)
                 return false;
-            if (equipment.RoomEquipments != null)
+            if (await _dbContext.RoomEquipments.AnyAsync(x => x.EquipmentId == id))
                 throw new InvalidOperationException("Nie można usunąć wyposażenia, które jest przypisane do pokoju");
             _dbContext.Remove(equipment);
             await _dbContext.SaveChangesAsync();

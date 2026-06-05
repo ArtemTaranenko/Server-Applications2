@@ -1,0 +1,39 @@
+﻿@model List<Web.ViewModels.Equipment.EquipmentViewModel>
+
+<title> Lista wyposażeń </title>
+
+<div class="w3-card w3-container">
+	<p>
+		<a asp-controller="Equipment" asp-action="Create" class="w3-button w3-blue w3-hover-blue-grey">Dodaj wyposażenie</a>
+	</p>
+	<div class="w3-card">
+		<table class="w3-table-all w3-hoverable">
+			<thead>
+				<tr>
+					<th>Nazwa</th>
+					<th>Opis</th>
+					<th>Przenośność</th>
+					<th>Akcje</th>
+				</tr>
+			</thead>
+			@foreach (var equipment in Model)
+			{
+				<tr>
+					<td>
+						@equipment.Name
+					</td>
+					<td>
+						@equipment.Description
+					</td>
+					<td>
+						@equipment.IsMobile
+					</td>
+					<td>
+						<a class="w3-button w3-green" asp-controller="Equipment" asp-action="Edit" asp-route-id="@equipment.Id">Edytuj</a>
+						<a class="w3-button w3-red" asp-controller="Equipment" asp-action="Delete" asp-route-id="@equipment.Id">Usuń</a>
+					</td>
+				</tr>
+			}
+		</table>
+	</div>
+</div>

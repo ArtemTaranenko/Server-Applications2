@@ -1,0 +1,18 @@
+﻿@model Web.ViewModels.Equipment.DeleteEquipmentViewModel
+
+<div class="w3-card">
+
+	<h1>Usuń wyposażenie</h1>
+
+	<div class="w3-container">
+		<p><strong>Nazwa:</strong>@Model.Name</p>
+		<p><strong>Opis:</strong>@Model.Description</p>
+		<p><strong>Czy jest przenośne?</strong>@Model.IsMobile</p>
+		<form asp-controller="Equipment" asp-action="Delete" method="post">
+			<p>
+				<button type ="submit" class="w3-button w3-red">Usuń</button>
+				<a asp-controller="Equipment" asp-action="Index" class="w3-button w3-grey">Cancel</a>
+			</p>
+		</form>
+	</div>
+</div>
