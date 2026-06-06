@@ -59,7 +59,7 @@ namespace Web.Controllers
 			var newBuildingId = await _buildingService.CreateAsync(buildingDto);
 
 			SetSuccessMessage("Budynek został utrworzony");
-			return View("Details", newBuildingId);
+			return RedirectToAction("Details", new { id = newBuildingId });
 		}
 
 		public async Task<IActionResult> Edit(int id)
@@ -72,9 +72,11 @@ namespace Web.Controllers
 
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public async Task<IActionResult> Edit(EditBuildingViewModel building)
+		public async Task<IActionResult> Edit(EditBuildingViewModel model)
 		{
-			var buildingDto = _mapper.Map<UpdateBuildingDto>(building);
+			if (!ModelState.IsValid)
+				return View(model);
+			var buildingDto = _mapper.Map<UpdateBuildingDto>(model);
 			var result = await _buildingService.UpdateAsync(buildingDto);
 
 			if (!result)

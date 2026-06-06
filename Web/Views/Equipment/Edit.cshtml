@@ -7,10 +7,12 @@
 			<p>
 				<label asp-for="Name">Nazwa:</label>
 				<input asp-for="Name" class="w3-input w3-border" />
+				<span asp-validation-for="Name" class="w3-text-red"></span>
 			</p>
 			<p>
 				<label asp-for="Description">Opis:</label>
 				<input asp-for="Description" class="w3-input w3-border" />
+				<span asp-validation-for="Description" class="w3-text-red"></span>
 			</p>
 			<p>
 				Czy jest przenośne?
@@ -22,6 +24,7 @@
 					<input type="radio" asp-for="IsMobile" value="false"/>
 					Nie
 				</label>
+				<span asp-validation-for="IsMobile" class="w3-text-red"></span>
 			</p>
 			<p>
 				<button type="submit" class="w3-button w3-green">Edytuj</button>

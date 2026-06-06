@@ -35,7 +35,7 @@ namespace Web.Controllers
 		public async Task<IActionResult> Create(CreateEventTypeViewModel model)
 		{
 			if (!ModelState.IsValid)
-				RedirectToAction("Error", "Home");
+				View("model");
 
 			var eventType = _mapper.Map<CreateEventTypeDto>(model);
 
@@ -57,7 +57,7 @@ namespace Web.Controllers
 		public async Task<IActionResult> Edit(UpdateEventTypeViewModel model)
 		{
 			if (!ModelState.IsValid)
-				return RedirectToAction("Error", "Home");
+				return View(model);
 			var eventTypeDto = _mapper.Map<UpdateEventTypeDto>(model);
 
 			var result = await _eventTypeService.UpdateAsync(eventTypeDto);

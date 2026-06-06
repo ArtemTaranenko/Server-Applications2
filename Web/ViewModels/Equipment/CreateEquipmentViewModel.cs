@@ -9,10 +9,9 @@ namespace Web.ViewModels.Equipment
 		[MaxLength(100, ErrorMessage ="Nazwa może posiadać maksymalnie 100 znaków")]
 		public string Name { get; set; } = null!;
 		[Display(Name = "Opis")]
-		[Required(ErrorMessage = "Opis jest wymagany!")]
 		[MaxLength(200, ErrorMessage = "Opis może posiadać maksymalnie 200 znaków")]
 		public string? Description { get; set; }
 		[Required(ErrorMessage = "Przenośność jest wymagana!")]
-		public bool IsMobile { get; set; }
+		public bool? IsMobile { get; set; }
 	}
 }

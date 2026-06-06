@@ -35,7 +35,7 @@ namespace Web.Controllers
 		public async Task<IActionResult> Create(CreateEquipmentViewModel model)
 		{
 			if (!ModelState.IsValid)
-				return RedirectToAction("Error", "Home");
+				return View(model);
 			var equipmentDto = _mapper.Map<CreateEquipmentDto>(model);
 			var result = await _equipmentService.CreateAsync(equipmentDto);
 
@@ -57,7 +57,7 @@ namespace Web.Controllers
 		public async Task<IActionResult> Edit(UpdateEquipmentViewModel model)
 		{
 			if (!ModelState.IsValid)
-				return RedirectToAction("Error", "Home");
+				return View(model);
 			var equipmentDto = _mapper.Map<UpdateEquipmentDto>(model);
 			var result = await _equipmentService.UpdateAsync(equipmentDto);
 

@@ -7,14 +7,17 @@
 			<p>
 				<label asp-for="Name">Nazwa: </label>
 				<input asp-for="Name" class="w3-input w3-border" />
+				<span asp-validation-for="Name" class="w3-text-red"></span>
 			</p>
 			<p>
 				<label asp-for="Address">Adres: </label>
 				<input asp-for="Address" class="w3-input w3-border" />
+				<span asp-validation-for="Address" class="w3-text-red"></span>
 			</p>
 			<p>
 				<label asp-for="Description">Opis: </label>
 				<input asp-for="Description" class="w3-input w3-border" />
+				<span asp-validation-for="Description" class="w3-text-red"></span>
 			</p>
 			<p>
 				<button type="submit" class="w3-btn w3-green w3-border">Edytuj</button>
