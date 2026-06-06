@@ -1,0 +1,38 @@
+﻿@model List<Web.ViewModels.Room.RoomListItemViewModel>
+
+<title>Lista sal</title>
+
+<div class="w3-card w3-container">
+	<p>
+		<a asp-controller="Room" asp-action="Create" class="w3-button w3-blue">Dodaj salę</a>
+	</p>
+	<div class="w3-card">
+		<table class="w3-table-all w3-hoverable">
+			<thead>
+				<tr>
+					<th>Nazwa</th>
+					<th>Pojemność</th>
+					<th>Piętro</th>
+					<th>Czy jest aktywna?</th>
+					<th>Nazwa budynku</th>
+					<th>Akcje</th>
+				</tr>
+			</thead>
+			@foreach (var room in Model)
+			{
+				<tr>
+					<td> @room.Name</td>
+					<td> @room.Capacity</td>
+					<td> @room.Floor</td>
+					<td> @room.IsActive</td>
+					<td> @room.BuildingName</td>
+					<td>
+						<a asp-controller="Room" asp-action="Details" asp-route-id="@room.Id" class="w3-button w3-purple">Szczegóły</a>
+						<a asp-controller="Room" asp-action="Edit" asp-route-id="@room.Id" class="w3-button w3-green">Edytuj</a>
+						<a asp-controller="Room" asp-action="Delete" asp-route-id="@room.Id" class="w3-button w3-red">Usuń</a>
+					</td>
+				</tr>
+			}
+		</table>
+	</div>
+</div>

@@ -1,0 +1,38 @@
+﻿@model Web.ViewModels.Room.EditRoomViewModel
+
+<div class="w3-panel w3-card-4 w3-padding">
+	<h1>Edytuj salę</h1>
+
+	<form asp-action="Edit" method="post" class="w3-container">
+		<div class="w3-section">
+			<label asp-for="Name">Nazwa:</label>
+			<input class="w3-input w3-border" asp-for="Name" />
+			<span asp-validation-for="Name" class="w3-text-red"></span>
+		</div>
+		<div class="w3-section">
+			<label asp-for="BuildingId">Budynek</label>
+			<select class="w3-select" asp-for="BuildingId" asp-items="Model.Buildings">
+				<option value="-1">-- Wybierz budynek --</option>
+			</select>
+			<span asp-validation-for="BuildingId" class="w3-text-red"></span>
+		</div>
+		<div class="w3-section">
+			<label asp-for="Capacity">Pojemność</label>
+			<input class="w3-input w3-border" asp-for="Capacity" type="number" min="1" />
+			<span asp-validation-for="Capacity" class="w3-text-red"></span>
+		</div>
+		<div class="w3-section">
+			<label asp-for="Floor">Piętro</label>
+			<input class="w3-input w3-border" asp-for="Floor" type="number" min="-2" />
+			<span asp-validation-for="Floor" class="w3-text-red"></span>
+		</div>
+		<div class="w3-section">
+			<input class="w3-check" asp-for="IsActive" />
+			<label asp-for="IsActive">Czy jest aktywna?</label>
+		</div>
+		<div class="w3-section">
+			<button class="w3-button w3-green" type="submit">Edytuj</button>
+			<a class="w3-button w3-grey" asp-action="Index">Cancel</a>
+		</div>
+	</form>
+</div>

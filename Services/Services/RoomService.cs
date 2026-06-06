@@ -60,7 +60,7 @@ namespace Services.Services
             if (dto == null)
                 throw new ArgumentNullException(nameof(dto));
 
-            if (!await _dbContext.Buildings.AllAsync(x => x.Id == dto.BuildingId))
+            if (!await _dbContext.Buildings.AnyAsync(x => x.Id == dto.BuildingId))
                 throw new InvalidOperationException("Nie można dodać pokoju w nieistniejącym budynku");
 
             if (dto.Capacity <= 0)
@@ -88,7 +88,7 @@ namespace Services.Services
             var room = await _dbContext.Rooms.FindAsync(id);
             if (room == null)
                 return false;
-            if (room.Reservations != null)
+            if (await _dbContext.Reservations.AnyAsync(x => x.RoomId == id))
                 throw new InvalidOperationException("Nie można usunąć pokoju, który posiada rezerwacji");
             _dbContext.Rooms.Remove(room);
             await _dbContext.SaveChangesAsync();

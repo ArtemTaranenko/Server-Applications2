@@ -1,0 +1,19 @@
+﻿@model Web.ViewModels.Room.RoomDetailsViewModel
+
+<div class="w3-card w3-container">
+
+	<h1>Szczegóły sali</h1>
+
+	<div class="w3-card">
+		<div class="w3-section">
+			<p><strong>Nazwa: </strong>@Model.Name</p>
+			<p><strong>Pojemność: </strong>@Model.Capacity</p>
+			<p><strong>Piętro </strong>@Model.Floor</p>
+			<p><strong>Czy jest aktywna? </strong>@Model.IsActive</p>
+			<p><strong>Budynek: </strong>@Model.BuildingName</p>
+			<a asp-controller="Room" asp-action="Index" class="w3-button w3-grey">Powrót do listy sal</a>
+		</div>
+
+	</div>
+
+</div>
